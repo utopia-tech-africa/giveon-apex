@@ -1,36 +1,12 @@
 import Link from "next/link";
 
-import { Logo } from "@/assets";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-import { HeroMobileNav } from "./hero-mobile-nav";
-import { heroLeftNavLinks, heroRightNavLinks } from "./hero-nav-links";
+import { HeroNavBar } from "./hero-nav-bar";
 
 const HERO_VIDEO_SRC =
-  "https://res.cloudinary.com/dan9camhs/video/upload/v1784826172/LANDING_PAGE_GIVEON_compressed_ejlvqt.mp4";
-
-function NavLinks({
-  links,
-  className,
-}: {
-  links: readonly { label: string; href: string }[];
-  className?: string;
-}) {
-  return (
-    <nav className={cn("flex items-center gap-6", className)}>
-      {links.map(({ label, href }) => (
-        <Link
-          key={href}
-          href={href}
-          className="text-lg uppercase tracking-wide text-white transition-colors hover:text-[#f38213]"
-        >
-          {label}
-        </Link>
-      ))}
-    </nav>
-  );
-}
+  "https://res.cloudinary.com/dan9camhs/video/upload/v1784831581/LANDING_PAGE_GIVEON_01_watermark_compressed_gqvzkg.mp4";
 
 export function HeroSection() {
   return (
@@ -52,21 +28,26 @@ export function HeroSection() {
       />
 
       <div className="relative flex min-h-screen flex-col pb-10 md:px-[60px] md:pb-[60px] md:pt-6">
-        <header className="hidden md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-4">
-          <NavLinks links={heroLeftNavLinks} />
+        <HeroNavBar />
 
-          <Link
-            href="/"
-            aria-label="Apex home"
-            className="justify-self-center md:col-start-2"
-          >
-            <Logo />
-          </Link>
+        <div
+          aria-hidden
+          className="shrink-0 px-4 py-3 pt-[43px] md:hidden"
+        >
+          <div className="flex items-center justify-between">
+            <div className="h-[26.53px] w-[82.71px]" />
+            <div className="size-6" />
+          </div>
+        </div>
 
-          <NavLinks links={heroRightNavLinks} className="justify-self-end" />
-        </header>
-
-        <HeroMobileNav />
+        <div
+          aria-hidden
+          className="hidden shrink-0 md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-4"
+        >
+          <div className="h-[37px]" />
+          <div className="h-[37px] w-[114px]" />
+          <div className="h-[37px]" />
+        </div>
 
         <div className="mt-auto flex flex-col gap-5 px-[17px] md:px-0 lg:flex-row lg:items-end lg:justify-between lg:gap-16">
           <div className="flex max-w-[766px] flex-col gap-2.5">
