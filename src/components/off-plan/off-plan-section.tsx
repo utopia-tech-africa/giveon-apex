@@ -43,7 +43,7 @@ export function OffPlanSection() {
 
         <OffPlanGallery />
 
-        <div className="mx-auto max-w-[1420px] px-4 pb-20 md:px-[60px] md:pb-28">
+        <div className="mx-auto max-w-[1420px] px-4 pb-10 md:px-[60px] md:pb-16">
           <div className="mt-8 flex flex-col gap-3 md:mt-10 md:gap-6 lg:mt-12 lg:flex-row lg:items-end lg:justify-between lg:gap-8">
             <p className="font-chillax text-sm leading-[1.2] text-[#d7d7d7] md:text-base lg:max-w-[597px] lg:text-lg">
               Reserve your home before construction completes and buy at
