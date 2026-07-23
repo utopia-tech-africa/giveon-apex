@@ -3,9 +3,12 @@ import Faq from "@/components/faq";
 import Prefooter from "@/components/prefooter";
 
 export const metadata: Metadata = {
-  title: "FAQ's | Giveon Apex",
+  title: "FAQ's",
   description:
     "Answers to common questions about Giveon Court, off-plan homes, payments, and Apex Cabins investments.",
+  alternates: {
+    canonical: "/faq",
+  },
 };
 
 export default function FaqPage() {
