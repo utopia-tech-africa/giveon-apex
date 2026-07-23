@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { toast } from "sonner";
 import { PrefooterBg } from "@/assets";
 import { enquirySchema, type EnquiryFormValues } from "@/lib/enquiry-schema";
 import ComponentLayout from "./component-layout";
@@ -19,7 +20,6 @@ const inputClassName = cn(
 
 const Prefooter = () => {
   const [formError, setFormError] = useState<string | null>(null);
-  const [formSuccess, setFormSuccess] = useState(false);
 
   const {
     register,
@@ -39,7 +39,6 @@ const Prefooter = () => {
 
   const onSubmit = async (values: EnquiryFormValues) => {
     setFormError(null);
-    setFormSuccess(false);
 
     try {
       const response = await fetch("/api/enquiry", {
@@ -51,14 +50,18 @@ const Prefooter = () => {
       const data = (await response.json()) as { error?: string };
 
       if (!response.ok) {
-        setFormError(data.error || "Failed to send enquiry.");
+        const message = data.error || "Failed to send enquiry.";
+        setFormError(message);
+        toast.error(message);
         return;
       }
 
-      setFormSuccess(true);
       reset();
+      toast.success("Thanks — your enquiry has been sent.");
     } catch {
-      setFormError("Something went wrong. Please try again.");
+      const message = "Something went wrong. Please try again.";
+      setFormError(message);
+      toast.error(message);
     }
   };
 
@@ -192,11 +195,6 @@ const Prefooter = () => {
 
             {formError && (
               <p className="font-chillax text-sm text-red-300">{formError}</p>
-            )}
-            {formSuccess && (
-              <p className="font-chillax text-sm text-[#e38837]">
-                Thanks — your enquiry has been sent.
-              </p>
             )}
 
             <Button type="submit" className="w-full" disabled={isSubmitting}>
