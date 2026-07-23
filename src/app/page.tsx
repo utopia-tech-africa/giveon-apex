@@ -1,6 +1,9 @@
-import Image from "next/image";
-import { Logo2 } from "@/assets";
+import { HeroSection } from "@/components";
 
 export default function Home() {
-  return <div></div>;
+  return (
+    <main className="flex flex-1 flex-col">
+    <HeroSection />
+  </main>
+  );
 }
