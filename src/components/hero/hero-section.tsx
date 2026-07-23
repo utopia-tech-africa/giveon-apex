@@ -83,7 +83,7 @@ export function HeroSection() {
 
         <div className="mt-auto flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between lg:gap-16">
           <div className="max-w-[766px] space-y-2.5">
-            <h1 className="text-[clamp(2.5rem,5vw,4.375rem)] font-normal italic leading-[1.2] capitalize">
+            <h1 className="text-[clamp(2.5rem,5vw,4.375rem)] font-normal italic leading-[1.2] capitalize font-zodiak">
               A home a retreat and an asset class
             </h1>
             <p className="max-w-[766px] text-lg leading-[1.2] text-white/95">
