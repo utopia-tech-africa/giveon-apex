@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { toast } from "sonner";
 import { PrefooterBg } from "@/assets";
 import { enquirySchema, type EnquiryFormValues } from "@/lib/enquiry-schema";
 import ComponentLayout from "./component-layout";
@@ -18,29 +19,33 @@ const inputClassName = cn(
   "outline-none transition-colors focus:border-[#e38837]",
 );
 
+const defaultValues: EnquiryFormValues = {
+  fullName: "",
+  email: "",
+  // Match react-international-phone's Ghana dial code so reset doesn't
+  // leave a short value that re-triggers validation after submit.
+  phone: "+233",
+  message: "",
+};
+
 const Prefooter = () => {
   const [formError, setFormError] = useState<string | null>(null);
-  const [formSuccess, setFormSuccess] = useState(false);
 
   const {
     register,
     control,
     handleSubmit,
     reset,
+    clearErrors,
     formState: { errors, isSubmitting },
   } = useForm<EnquiryFormValues>({
     resolver: zodResolver(enquirySchema),
-    defaultValues: {
-      fullName: "",
-      email: "",
-      phone: "",
-      message: "",
-    },
+    defaultValues,
+    reValidateMode: "onSubmit",
   });
 
   const onSubmit = async (values: EnquiryFormValues) => {
     setFormError(null);
-    setFormSuccess(false);
 
     try {
       const response = await fetch("/api/enquiry", {
@@ -52,14 +57,19 @@ const Prefooter = () => {
       const data = (await response.json()) as { error?: string };
 
       if (!response.ok) {
-        setFormError(data.error || "Failed to send enquiry.");
+        const message = data.error || "Failed to send enquiry.";
+        setFormError(message);
+        toast.error(message);
         return;
       }
 
-      setFormSuccess(true);
-      reset();
+      reset(defaultValues);
+      clearErrors();
+      toast.success("Thanks — your enquiry has been sent.");
     } catch {
-      setFormError("Something went wrong. Please try again.");
+      const message = "Something went wrong. Please try again.";
+      setFormError(message);
+      toast.error(message);
     }
   };
 
@@ -199,11 +209,6 @@ const Prefooter = () => {
 
             {formError && (
               <p className="font-chillax text-sm text-red-300">{formError}</p>
-            )}
-            {formSuccess && (
-              <p className="font-chillax text-sm text-[#e38837]">
-                Thanks — your enquiry has been sent.
-              </p>
             )}
 
             <Button type="submit" className="w-full" disabled={isSubmitting}>
