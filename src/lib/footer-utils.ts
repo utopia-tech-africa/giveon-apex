@@ -1,8 +1,15 @@
 import {
   FacebookLogoIcon,
   InstagramLogoIcon,
-  YoutubeLogoIcon,
+  TiktokLogoIcon,
 } from "@phosphor-icons/react";
+
+export const SOCIAL_LINKS = {
+  facebook: "https://www.facebook.com/share/1MyE2sCbbP/?mibextid=wwXIfr",
+  instagram: "https://www.instagram.com/giveon_apex/",
+  tiktok: "https://www.tiktok.com/@giveon_apex",
+} as const;
+
 
 export const footerUtils = [
   {
@@ -23,35 +30,22 @@ export const footerUtils = [
     ],
   },
   {
-    title: "Legal",
-    items: [
-      {
-        label: "Privacy Policy",
-        link: "#",
-      },
-      {
-        label: "Terms of Use",
-        link: "#",
-      },
-    ],
-  },
-  {
     title: "Follow us",
     items: [
       {
         label: "Facebook",
         icon: FacebookLogoIcon,
-        link: "#",
+        link: SOCIAL_LINKS.facebook,
       },
       {
         label: "Instagram",
         icon: InstagramLogoIcon,
-        link: "#",
+        link: SOCIAL_LINKS.instagram,
       },
       {
-        label: "Youtube",
-        icon: YoutubeLogoIcon,
-        link: "#",
+        label: "TikTok",
+        icon: TiktokLogoIcon,
+        link: SOCIAL_LINKS.tiktok,
       },
     ],
   },

@@ -4,6 +4,7 @@ import Link from "next/link";
 import blueprintImg from "@/assets/img/blueprint.png";
 import giveonCourtLogo from "@/assets/svg/giveon-court-logo.svg";
 import { buttonVariants } from "@/components/ui/button";
+import { scrollTargetClassName } from "@/lib/site-links";
 import { cn } from "@/lib/utils";
 
 import { offPlanBullets } from "./off-plan-content";
@@ -26,7 +27,10 @@ export function OffPlanSection() {
         <div className="absolute inset-0 bg-[linear-gradient(180deg,#000c04_0%,transparent_16%,transparent_90%,#000c04_98%)]" />
       </div>
 
-      <section id="off-plan-homes" className="bg-[#000c04] text-white">
+      <section
+        id="off-plan-homes"
+        className={cn("bg-[#000c04] text-white", scrollTargetClassName)}
+      >
         <div className="mx-auto px-4 md:px-[60px]">
           <div className="relative mx-auto flex max-w-[856px] flex-col items-center">
             <Image

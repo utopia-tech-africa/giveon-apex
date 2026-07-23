@@ -3,6 +3,8 @@ import Link from "next/link";
 
 import livingsCabinsImg from "@/assets/img/livings-cabins.png";
 import livingsHomesImg from "@/assets/img/livings-homes.png";
+import { scrollTargetClassName } from "@/lib/site-links";
+import { cn } from "@/lib/utils";
 
 import { livingsCards } from "./livings-cards";
 
@@ -47,7 +49,7 @@ function LivingsCard({
 
 export function LivingsSection() {
   return (
-    <section className="bg-[#000c04] text-white">
+    <section className={cn("bg-[#000c04] text-white ", scrollTargetClassName)} id="cabins">
       <div className="mx-auto pb-20 pt-16 md:px-[60px] md:pb-28 md:pt-24">
       <p className="font-zodiak text-sm font-light italic leading-[1.2] text-[#f38213] md:text-base mb-5 px-4 md:px-0">
               OUR LIVINGS
@@ -63,11 +65,11 @@ export function LivingsSection() {
           </div>
 
           <div className="flex flex-col gap-8 md:min-w-0 md:flex-1 md:flex-row">
-            {livingsCards.map((card) => (
+            {livingsCards.map((card, index) => (
               <div
                 key={card.label}
-                id={card.href === "#cabins" ? "cabins" : undefined}
-                className="scroll-mt-24 md:flex-1"
+                id={index.toString()}
+                className=" md:flex-1"
               >
                 <LivingsCard {...card} />
               </div>
