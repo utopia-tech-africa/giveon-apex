@@ -91,7 +91,8 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${chillax.variable} ${zodiak.variable} h-full antialiased`}>
+      className={`${chillax.variable} ${zodiak.variable} h-full scroll-smooth antialiased`}
+    >
       <body className="min-h-full max-w-dvw flex flex-col font-sans bg-[#000C04]">
         {children}
         <Prefooter />

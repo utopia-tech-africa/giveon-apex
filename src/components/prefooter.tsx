@@ -66,7 +66,7 @@ const Prefooter = () => {
   };
 
   return (
-    <section className="relative isolate overflow-hidden">
+    <section id="contact" className="relative isolate overflow-hidden ">
       <Image
         src={PrefooterBg}
         alt=""

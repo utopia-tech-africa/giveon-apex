@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { Logo } from "@/assets";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 import { HeroMobileNav } from "./hero-mobile-nav";
@@ -79,9 +79,15 @@ export function HeroSection() {
             </p>
           </div>
 
-          <Button className="w-full shrink-0 text-sm md:w-fit md:text-lg lg:self-end">
+          <Link
+            href="#contact"
+            className={cn(
+              buttonVariants(),
+              "w-full shrink-0 text-sm md:w-fit md:text-lg lg:self-end",
+            )}
+          >
             Send Enquiry
-          </Button>
+          </Link>
         </div>
       </div>
     </section>
