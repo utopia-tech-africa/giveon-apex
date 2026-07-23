@@ -6,6 +6,8 @@ import Blueprint from "./blueprint.png";
 import OffPlanCenter from "./offplan-center.png";
 import OffPlanLeft from "./offplan-left.png";
 import OffPlanRight from "./offplan-right.png";
+import ApexCabinsWide from "./apex-cabins-wide.png";
+import ApexCabinsPortrait from "./apex-cabins-portrait.png";
 
 export {
   Logo2,
@@ -16,4 +18,6 @@ export {
   OffPlanCenter,
   OffPlanLeft,
   OffPlanRight,
+  ApexCabinsWide,
+  ApexCabinsPortrait,
 };

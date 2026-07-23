@@ -2,13 +2,10 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { useForm, Controller, type Resolver } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { PrefooterBg } from "@/assets";
-import {
-  enquirySchema,
-  type EnquiryFormValues,
-} from "@/lib/enquiry-schema";
+import { enquirySchema, type EnquiryFormValues } from "@/lib/enquiry-schema";
 import ComponentLayout from "./component-layout";
 import PhoneInput from "./phone-input";
 import { Button } from "./ui/button";
@@ -31,7 +28,7 @@ const Prefooter = () => {
     reset,
     formState: { errors, isSubmitting },
   } = useForm<EnquiryFormValues>({
-    resolver: zodResolver(enquirySchema) as Resolver<EnquiryFormValues>,
+    resolver: zodResolver(enquirySchema),
     defaultValues: {
       fullName: "",
       email: "",
@@ -66,7 +63,7 @@ const Prefooter = () => {
   };
 
   return (
-    <section id="contact" className="relative isolate overflow-hidden ">
+    <section id="contact" className="relative isolate overflow-hidden mb-16">
       <Image
         src={PrefooterBg}
         alt=""
@@ -80,8 +77,8 @@ const Prefooter = () => {
         className="absolute inset-0 bg-linear-to-b from-[#000C04] via-[#000C04]/20 to-[#000C04]"
       />
 
-      <ComponentLayout className="relative z-10 flex flex-col gap-10 pt-[62px] pb-16 lg:flex-row lg:items-start lg:justify-between lg:gap-16 lg:py-[68px]">
-        <div className="flex max-w-[346px] flex-col gap-3 capitalize lg:max-w-[524px] lg:gap-4">
+      <ComponentLayout className="relative z-10 flex flex-col gap-10 pt-15.5 pb-16 lg:flex-row lg:items-start lg:justify-between lg:gap-16 lg:py-17">
+        <div className="flex max-w-86.5 flex-col gap-3 capitalize lg:max-w-131 lg:gap-4">
           <h2 className="font-zodiak text-xl italic leading-[1.2] text-white lg:text-[30px]">
             Discover The
             <br />
@@ -97,8 +94,7 @@ const Prefooter = () => {
         <form
           className="flex w-full max-w-[536px] flex-col items-center gap-6 rounded-xl bg-[#013030] p-6"
           onSubmit={handleSubmit(onSubmit)}
-          noValidate
-        >
+          noValidate>
           <h3 className="max-w-[404px] text-center font-zodiak text-[32px] italic leading-[1.2] text-white capitalize md:text-[50px]">
             Envision your Future with Us
           </h3>

@@ -95,7 +95,6 @@ export default function RootLayout({
     >
       <body className="min-h-full max-w-dvw flex flex-col font-sans bg-[#000C04]">
         {children}
-        <Prefooter />
         <Footer />
       </body>
     </html>
