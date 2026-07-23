@@ -1,6 +1,11 @@
-import Image from "next/image";
-import { Logo2 } from "@/assets";
+import Faq from "@/components/faq";
+import Prefooter from "@/components/prefooter";
 
 export default function Home() {
-  return <div></div>;
+  return (
+    <main className="flex flex-1 flex-col">
+      <Faq />
+      <Prefooter />
+    </main>
+  );
 }

@@ -1,64 +1,29 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
-import {
-  FacebookLogoIcon,
-  InstagramLogoIcon,
-  YoutubeLogoIcon,
-} from "@phosphor-icons/react";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export const footerUtils = [
+export const faqUtils = [
   {
-    title: "Quick links",
-    items: [
-      {
-        label: "Off-plan homes",
-        link: "#",
-      },
-      {
-        label: "Apex cabins",
-        link: "#",
-      },
-      {
-        label: "Contact us",
-        link: "#",
-      },
-    ],
+    question: "What is Giveon Court?",
+    answer:
+      "Giveon Court is an 8-acre gated estate in Adukrom-Dawu, developed by Alpha Construction & Roofing Works and managed by Giveon Apex. It includes off-plan detached and semi-detached homes, and Apex Cabins — a 5-cabin eco-lodge investment and short-let development.",
   },
   {
-    title: "Legal",
-    items: [
-      {
-        label: "Privacy Policy",
-        link: "#",
-      },
-      {
-        label: "Terms of Use",
-        link: "#",
-      },
-    ],
+    question: 'What does "off-plan" mean?',
+    answer:
+      "You reserve and purchase your home before construction is complete, at pricing set ahead of the final build.",
   },
   {
-    title: "Follow us",
-    items: [
-      {
-        label: "Facebook",
-        icon: FacebookLogoIcon,
-        link: "#",
-      },
-      {
-        label: "Instagram",
-        icon: InstagramLogoIcon,
-        link: "#",
-      },
-      {
-        label: "Youtube",
-        icon: YoutubeLogoIcon,
-        link: "#",
-      },
-    ],
+    question: "What's the payment process?",
+    answer:
+      "Payment is staged across the construction period rather than paid in full upfront.",
+  },
+  {
+    question: "What am I actually investing in?",
+    answer:
+      "Each investment is anchored by real property ownership in the cabins, not just a share of future rental income.",
   },
 ];

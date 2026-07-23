@@ -2,7 +2,7 @@
 import ComponentLayout from "./component-layout";
 import Image from "next/image";
 import { Logo2 } from "@/assets";
-import { footerUtils } from "@/lib/utils";
+import { footerUtils } from "@/lib/footer";
 import Link from "next/link";
 
 const Footer = () => {
