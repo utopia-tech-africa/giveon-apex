@@ -18,6 +18,15 @@ const inputClassName = cn(
   "outline-none transition-colors focus:border-[#e38837]",
 );
 
+const defaultValues: EnquiryFormValues = {
+  fullName: "",
+  email: "",
+  // Match react-international-phone's Ghana dial code so reset doesn't
+  // leave a short value that re-triggers validation after submit.
+  phone: "+233",
+  message: "",
+};
+
 const Prefooter = () => {
   const [formError, setFormError] = useState<string | null>(null);
 
@@ -26,15 +35,12 @@ const Prefooter = () => {
     control,
     handleSubmit,
     reset,
+    clearErrors,
     formState: { errors, isSubmitting },
   } = useForm<EnquiryFormValues>({
     resolver: zodResolver(enquirySchema),
-    defaultValues: {
-      fullName: "",
-      email: "",
-      phone: "",
-      message: "",
-    },
+    defaultValues,
+    reValidateMode: "onSubmit",
   });
 
   const onSubmit = async (values: EnquiryFormValues) => {
@@ -56,7 +62,8 @@ const Prefooter = () => {
         return;
       }
 
-      reset();
+      reset(defaultValues);
+      clearErrors();
       toast.success("Thanks — your enquiry has been sent.");
     } catch {
       const message = "Something went wrong. Please try again.";

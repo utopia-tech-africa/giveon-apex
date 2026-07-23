@@ -12,7 +12,9 @@ export const enquirySchema = z.object({
   phone: z
     .string()
     .trim()
-    .min(8, "Please enter a valid phone number"),
+    .refine((value) => value.replace(/\D/g, "").length >= 10, {
+      message: "Please enter a valid phone number",
+    }),
   message: z
     .string()
     .trim()
