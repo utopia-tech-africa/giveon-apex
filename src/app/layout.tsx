@@ -1,15 +1,72 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const zodiak = localFont({
+  src: [
+    {
+      path: "./fonts/Zodiak-Thin.otf",
+      weight: "100",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Zodiak-ThinItalic.otf",
+      weight: "100",
+      style: "italic",
+    },
+    {
+      path: "./fonts/Zodiak-Light.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Zodiak-LightItalic.otf",
+      weight: "300",
+      style: "italic",
+    },
+    {
+      path: "./fonts/Zodiak-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Zodiak-Italic.otf",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "./fonts/Zodiak-Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Zodiak-BoldItalic.otf",
+      weight: "700",
+      style: "italic",
+    },
+    {
+      path: "./fonts/Zodiak-Extrabold.otf",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Zodiak-ExtraboldItalic.otf",
+      weight: "800",
+      style: "italic",
+    },
+    {
+      path: "./fonts/Zodiak-Black.otf",
+      weight: "900",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Zodiak-BlackItalic.otf",
+      weight: "900",
+      style: "italic",
+    },
+  ],
+  variable: "--font-sans",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -23,11 +80,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className={`${zodiak.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col font-sans">{children}</body>
     </html>
   );
 }
