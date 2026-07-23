@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "@/components/footer";
+import { Toaster } from "@/components/ui/sonner";
 
 const chillax = localFont({
   src: "./fonts/Chillax-Variable.ttf",
@@ -155,6 +156,7 @@ export default function RootLayout({
       <body className="min-h-full max-w-dvw flex flex-col font-sans bg-[#000C04]">
         {children}
         <Footer />
+        <Toaster />
       </body>
     </html>
   );

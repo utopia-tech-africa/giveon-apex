@@ -1,6 +1,6 @@
 export const introStats = [
   {
-    value: "$320k",
+    value: "$10k",
     label: "entry",
     description: "Semi-detached off-plan homes",
   },
