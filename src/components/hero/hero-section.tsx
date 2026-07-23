@@ -4,18 +4,11 @@ import { Logo } from "@/assets";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
+import { HeroMobileNav } from "./hero-mobile-nav";
+import { heroLeftNavLinks, heroRightNavLinks } from "./hero-nav-links";
+
 const HERO_VIDEO_SRC =
   "https://res.cloudinary.com/dan9camhs/video/upload/v1784811535/Stars_twinkle__branches_sway_202607210803_umhlob.mp4";
-
-const leftNavLinks = [
-  { label: "Off-plan homes", href: "#off-plan-homes" },
-  { label: "Cabins", href: "#cabins" },
-] as const;
-
-const rightNavLinks = [
-  { label: "About", href: "#about" },
-  { label: "Contact us", href: "#contact" },
-] as const;
 
 function NavLinks({
   links,
@@ -58,9 +51,9 @@ export function HeroSection() {
         className="absolute inset-0 bg-linear-to-b from-[rgba(0,12,4,0)] to-[rgba(0,12,4,1)]"
       />
 
-      <div className="relative flex min-h-screen flex-col px-6 pb-10 pt-6 md:px-[60px] md:pb-[60px] md:pt-6">
-        <header className="flex flex-col items-center gap-6 md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-4">
-          <NavLinks links={leftNavLinks} className="hidden md:flex" />
+      <div className="relative flex min-h-screen flex-col pb-10 md:px-[60px] md:pb-[60px] md:pt-6">
+        <header className="hidden md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-4">
+          <NavLinks links={heroLeftNavLinks} />
 
           <Link
             href="/"
@@ -70,31 +63,23 @@ export function HeroSection() {
             <Logo />
           </Link>
 
-          <NavLinks
-            links={rightNavLinks}
-            className="hidden justify-self-end md:flex"
-          />
-
-          <NavLinks
-            links={[...leftNavLinks, ...rightNavLinks]}
-            className="flex flex-wrap justify-center gap-x-6 gap-y-3 md:hidden"
-          />
+          <NavLinks links={heroRightNavLinks} className="justify-self-end" />
         </header>
 
-        <div className="mt-auto flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between lg:gap-16">
-          <div className="max-w-[766px] space-y-2.5">
-            <h1 className="text-[clamp(2.5rem,5vw,4.375rem)] font-normal italic leading-[1.2] capitalize font-zodiak">
+        <HeroMobileNav />
+
+        <div className="mt-auto flex flex-col gap-5 px-[17px] md:px-0 lg:flex-row lg:items-end lg:justify-between lg:gap-16">
+          <div className="flex max-w-[766px] flex-col gap-2.5">
+            <h1 className="font-zodiak text-[32px] font-normal capitalize italic leading-[1.2] md:text-[clamp(2.5rem,5vw,4.375rem)]">
               A home a retreat and an asset class
             </h1>
-            <p className="max-w-[766px] text-lg leading-[1.2] text-white/95">
+            <p className="max-w-[766px] text-sm leading-[1.2] text-white md:text-lg">
               Off-plan detached and semi-detached homes, plus investment cabins
               with built-in short-stay income.
             </p>
           </div>
 
-          <Button
-            className="w-fit shrink-0 self-start lg:self-end"
-          >
+          <Button className="w-full shrink-0 text-sm md:w-fit md:text-lg lg:self-end">
             Send Enquiry
           </Button>
         </div>
