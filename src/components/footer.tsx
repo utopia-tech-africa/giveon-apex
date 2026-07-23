@@ -13,7 +13,11 @@ const Footer = () => {
     <footer className="mt-auto">
       <ComponentLayout className="py-10 flex flex-col gap-10 lg:flex-row lg:justify-between">
         <div className="flex flex-col gap-4">
-          <Image src={Logo2} alt="Giveon Apex logo" className="w-[69px] h-[52px]" />
+          <Image
+            src={Logo2}
+            alt="Giveon Apex logo"
+            className="w-[69px] h-[52px]"
+          />
           <p className="font-chillax text-white/50 text-sm font-semibold leading-[1.1]">
             Elevated Living...
           </p>
@@ -31,8 +35,7 @@ const Footer = () => {
                     <li key={linkIdx}>
                       <Link
                         href={linkItem.link}
-                        className="font-chillax text-base text-white/70 hover:text-white transition-colors whitespace-nowrap"
-                      >
+                        className="font-chillax text-base text-white/70 hover:text-white transition-colors whitespace-nowrap">
                         {linkItem.label}
                       </Link>
                     </li>
@@ -55,8 +58,7 @@ const Footer = () => {
                     <li key={linkIdx} className="shrink-0">
                       <Link
                         href={linkItem.link}
-                        className="flex items-center gap-2 py-1.5 font-chillax text-base text-white/70 hover:text-white transition-colors whitespace-nowrap"
-                      >
+                        className="flex items-center gap-2 py-1.5 font-chillax text-base text-white/70 hover:text-white transition-colors whitespace-nowrap">
                         {Icon && <Icon size={16} weight="bold" />}
                         {linkItem.label}
                       </Link>
