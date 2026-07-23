@@ -30,7 +30,7 @@ function NavLinks({
         <Link
           key={href}
           href={href}
-          className="text-lg uppercase tracking-wide text-white transition-opacity hover:opacity-80"
+          className="text-lg uppercase tracking-wide text-white transition-colors hover:text-[#f38213]"
         >
           {label}
         </Link>
@@ -93,8 +93,6 @@ export function HeroSection() {
           </div>
 
           <Button
-            variant="outlineAccent"
-            size="hero"
             className="w-fit shrink-0 self-start lg:self-end"
           >
             Send Enquiry
