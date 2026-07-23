@@ -14,6 +14,8 @@ export default function Home() {
           <Image
             src="/cabins-pattern.svg"
             alt=""
+            width={1438}
+            height={748}
             className="h-auto w-full max-w-none select-none"
           />
         </div>
