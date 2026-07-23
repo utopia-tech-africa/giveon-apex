@@ -10,15 +10,15 @@ export const footerUtils = [
     items: [
       {
         label: "Off-plan homes",
-        link: "#",
+        link: "#off-plan-homes",
       },
       {
         label: "Apex cabins",
-        link: "#",
+        link: "#cabins",
       },
       {
         label: "Contact us",
-        link: "#",
+        link: "#contact",
       },
     ],
   },

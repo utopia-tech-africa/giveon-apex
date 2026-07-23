@@ -1,3 +1,9 @@
+import {
+  HeroSection,
+  IntroSection,
+  LivingsSection,
+  OffPlanSection,
+} from "@/components";
 import ApexCabins from "@/components/apex-cabins";
 import Features from "@/components/features";
 import Faq from "@/components/faq";
@@ -7,6 +13,11 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="flex flex-1 flex-col">
+      <HeroSection />
+      <IntroSection />
+      <LivingsSection />
+      <OffPlanSection />
+
       <div className="relative">
         <div
           aria-hidden
