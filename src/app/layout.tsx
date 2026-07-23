@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Footer from "@/components/footer";
+
+const chillax = localFont({
+  src: "./fonts/Chillax-Variable.ttf",
+  variable: "--font-chillax",
+  display: "swap",
+  weight: "200 700",
+});
 
 const zodiak = localFont({
   src: [
@@ -65,7 +73,7 @@ const zodiak = localFont({
       style: "italic",
     },
   ],
-  variable: "--font-sans",
+  variable: "--font-zodiak",
   display: "swap",
 });
 
@@ -80,8 +88,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${zodiak.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+    <html
+      lang="en"
+      className={`${chillax.variable} ${zodiak.variable} h-full antialiased`}>
+      <body className="min-h-full max-w-dvw flex flex-col font-sans bg-[#000C04]">
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
