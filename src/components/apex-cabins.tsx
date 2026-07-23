@@ -6,7 +6,7 @@ const ApexCabins = () => {
   return (
     <section
       id="apex-cabins"
-      className="flex flex-col gap-8 px-4 py-16 md:px-10 lg:flex-row lg:items-stretch lg:justify-between lg:gap-12 lg:py-24 lg:pr-15 lg:pl-0 xl:gap-16"
+      className="flex flex-col gap-8 px-4 py-10 md:px-10 lg:flex-row lg:items-stretch lg:justify-between lg:gap-12 lg:py-24 lg:pr-15 lg:pl-0 xl:gap-16"
     >
       <div className="relative w-full shrink-0 lg:w-[min(100%,546px)]">
         <div className="relative h-[381px] w-full overflow-hidden rounded-lg lg:aspect-[546/519] lg:h-auto lg:rounded-l-none lg:rounded-r-lg">

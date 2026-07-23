@@ -43,9 +43,9 @@ export function IntroSection() {
         className="pointer-events-none absolute -right-[55px] top-40 h-auto w-[min(206px,55vw)] select-none md:-right-[58px] md:w-[420px]"
       />
 
-      <div className="relative mx-auto px-4 pb-20 pt-16 md:px-[60px] md:pb-28 md:pt-24">
-        <p className="mx-auto max-w-[1278px] text-center font-zodiak text-[21px] font-light italic leading-[1.2] text-[#d7d7d7] md:text-[32px]">
-          <span className="font-bold italic text-[#f38213]">Giveon Court</span>{" "}
+      <div className="relative mx-auto px-4 pb-10 pt-16 md:px-[60px] md:pb-16 md:pt-24">
+        <p className="mx-auto max-w-[1278px] text-left font-zodiak text-[21px] font-light italic leading-[1.2] text-[#d7d7d7] md:text-[32px] sm:text-center">
+          <span className="font-bold italic text-[#f38213] ">Giveon Court</span>{" "}
           is not simply another housing development. It is a scarce lifestyle
           asset in a rising Ghanaian corridor: a gated 8-acre villa community
           sitting one minute from Safari Valley Eco Resort, with premium
