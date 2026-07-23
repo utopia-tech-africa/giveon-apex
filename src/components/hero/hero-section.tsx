@@ -8,7 +8,7 @@ import { HeroMobileNav } from "./hero-mobile-nav";
 import { heroLeftNavLinks, heroRightNavLinks } from "./hero-nav-links";
 
 const HERO_VIDEO_SRC =
-  "https://res.cloudinary.com/dan9camhs/video/upload/v1784811535/Stars_twinkle__branches_sway_202607210803_umhlob.mp4";
+  "https://res.cloudinary.com/dan9camhs/video/upload/v1784826172/LANDING_PAGE_GIVEON_compressed_ejlvqt.mp4";
 
 function NavLinks({
   links,
