@@ -129,3 +129,93 @@
     @apply font-sans;
   }
 }
+
+.apex-phone-input {
+  --react-international-phone-height: 46px;
+  --react-international-phone-font-size: 14px;
+  --react-international-phone-border-radius: 8px;
+  --react-international-phone-border-color: #d9dbdb;
+  --react-international-phone-background-color: transparent;
+  --react-international-phone-text-color: #ffffff;
+  --react-international-phone-selected-dropdown-item-background-color: rgb(255 255 255 / 10%);
+  --react-international-phone-dropdown-item-background-color: #013030;
+  --react-international-phone-dropdown-item-text-color: #ffffff;
+  --react-international-phone-dropdown-item-dial-code-color: #617677;
+  --react-international-phone-country-selector-background-color: transparent;
+  --react-international-phone-country-selector-background-color-hover: transparent;
+  --react-international-phone-country-selector-border-color: #d9dbdb;
+  --react-international-phone-country-selector-arrow-color: #ffffff;
+  --react-international-phone-flag-width: 24px;
+  --react-international-phone-flag-height: 18px;
+  --react-international-phone-dropdown-top: 50px;
+  --react-international-phone-dropdown-left: 0;
+  width: 100%;
+}
+
+.apex-phone-input .react-international-phone-country-selector-button {
+  width: 52px;
+  min-width: 52px;
+  padding: 0 8px;
+  border-right: none;
+}
+
+.apex-phone-input .react-international-phone-input {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  font-family: var(--font-chillax), sans-serif;
+  color: #ffffff;
+}
+
+.apex-phone-input .react-international-phone-input::placeholder {
+  color: #617677;
+}
+
+.apex-phone-input:focus-within .react-international-phone-country-selector-button,
+.apex-phone-input:focus-within .react-international-phone-input {
+  border-color: #e38837;
+}
+
+.apex-phone-input .react-international-phone-country-selector-button:focus {
+  outline: none;
+}
+
+.apex-phone-input__dropdown {
+  width: 280px !important;
+  max-width: min(280px, calc(100vw - 32px));
+  max-height: 240px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border: 1px solid #d9dbdb;
+  border-radius: 8px;
+  background-color: #013030;
+  font-family: var(--font-chillax), sans-serif;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 35%);
+  z-index: 30;
+}
+
+.apex-phone-input__dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  min-height: 40px;
+  padding: 8px 12px;
+  overflow: hidden;
+}
+
+.apex-phone-input__dropdown-item .react-international-phone-country-selector-dropdown__list-item-country-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.apex-phone-input__dropdown-item .react-international-phone-country-selector-dropdown__list-item-dial-code {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
