@@ -2,6 +2,8 @@ import Image from "next/image";
 
 import introAccentLeft from "@/assets/svg/intro-accent-left.svg";
 import introAccentRight from "@/assets/svg/intro-accent-right.svg";
+import { scrollTargetClassName } from "@/lib/site-links";
+import { cn } from "@/lib/utils";
 
 import { introStats } from "./intro-stats";
 
@@ -29,7 +31,13 @@ function IntroStat({
 
 export function IntroSection() {
   return (
-    <section id="about" className="relative overflow-hidden bg-[#000c04] text-white">
+    <section
+      id="about"
+      className={cn(
+        "relative overflow-hidden bg-[#000c04] text-white",
+        scrollTargetClassName,
+      )}
+    >
       <Image
         src={introAccentLeft}
         alt=""

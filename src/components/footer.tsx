@@ -2,7 +2,7 @@
 import ComponentLayout from "./component-layout";
 import Image from "next/image";
 import { Logo2 } from "@/assets";
-import { footerUtils } from "@/lib/footer";
+import { footerUtils } from "@/lib/footer-utils";
 import Link from "next/link";
 
 const Footer = () => {
@@ -58,6 +58,8 @@ const Footer = () => {
                     <li key={linkIdx} className="shrink-0">
                       <Link
                         href={linkItem.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="flex items-center gap-2 py-1.5 font-chillax text-base text-white/70 hover:text-white transition-colors whitespace-nowrap">
                         {Icon && <Icon size={16} weight="bold" />}
                         {linkItem.label}
@@ -70,6 +72,14 @@ const Footer = () => {
           )}
         </div>
       </ComponentLayout>
+
+      <div className="border-t border-white/10">
+        <ComponentLayout className="py-6">
+          <p className="font-chillax text-sm text-white/50">
+            © {new Date().getFullYear()} Giveon Apex. All rights reserved.
+          </p>
+        </ComponentLayout>
+      </div>
     </footer>
   );
 };

@@ -10,6 +10,7 @@ import { enquirySchema, type EnquiryFormValues } from "@/lib/enquiry-schema";
 import ComponentLayout from "./component-layout";
 import PhoneInput from "./phone-input";
 import { Button } from "./ui/button";
+import { scrollTargetClassName } from "@/lib/site-links";
 import { cn } from "@/lib/utils";
 
 const inputClassName = cn(
@@ -73,7 +74,13 @@ const Prefooter = () => {
   };
 
   return (
-    <section id="contact" className="relative isolate overflow-hidden mb-16">
+    <section
+      id="contact"
+      className={cn(
+        "relative isolate overflow-hidden mb-16",
+        scrollTargetClassName,
+      )}
+    >
       <Image
         src={PrefooterBg}
         alt=""
