@@ -24,6 +24,10 @@ export const footerUtils = [
         link: "#cabins",
       },
       {
+        label: "Waitlist",
+        link: "/waitlist",
+      },
+      {
         label: "Contact us",
         link: "#contact",
       },
