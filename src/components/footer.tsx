@@ -72,6 +72,14 @@ const Footer = () => {
           )}
         </div>
       </ComponentLayout>
+
+      <div className="border-t border-white/10">
+        <ComponentLayout className="py-6">
+          <p className="font-chillax text-sm text-white/50">
+            © {new Date().getFullYear()} Giveon Apex. All rights reserved.
+          </p>
+        </ComponentLayout>
+      </div>
     </footer>
   );
 };
