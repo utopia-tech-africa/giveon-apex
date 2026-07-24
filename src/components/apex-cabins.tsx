@@ -1,6 +1,8 @@
+import Link from "next/link";
 import Image from "next/image";
 import { ApexCabinsPortrait, ApexCabinsWide } from "@/assets";
-import { Button } from "./ui/button";
+import { Button, buttonVariants } from "./ui/button";
+import { cn } from "@/lib/utils";
 
 const ApexCabins = () => {
   return (
@@ -82,12 +84,15 @@ const ApexCabins = () => {
           >
             Invest in Cabins
           </Button>
-          <Button
-            type="button"
-            className="w-full flex-1 text-sm lg:text-base xl:text-lg"
+          <Link
+            href="/waitlist"
+            className={cn(
+              buttonVariants(),
+              "w-full flex-1 text-center text-sm lg:text-base xl:text-lg",
+            )}
           >
             Join waitlist to book
-          </Button>
+          </Link>
         </div>
       </div>
     </section>
