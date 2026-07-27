@@ -15,7 +15,7 @@ export const introStats = [
     description: "From Safari Valley Eco Resort",
   },
   {
-    value: "15 mo.",
+    value: "18 mo.",
     label: "pay plan",
     description: "Flexible buyer structure",
   },

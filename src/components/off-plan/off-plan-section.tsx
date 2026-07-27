@@ -15,7 +15,7 @@ export function OffPlanSection() {
     <>
       <div
         aria-hidden
-        className="relative h-[380px] w-full opacity-40 md:h-[669px]"
+        className="relative h-[380px] w-full opacity-90 md:h-[669px]"
       >
         <Image
           src={blueprintImg}

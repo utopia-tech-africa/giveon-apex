@@ -1,8 +1,9 @@
 import Link from "next/link";
-import Image from "next/image";
-import { ApexCabinsPortrait, ApexCabinsWide } from "@/assets";
 import { Button, buttonVariants } from "./ui/button";
 import { cn } from "@/lib/utils";
+
+const APEX_CABINS_VIDEO_SRC =
+  "https://res.cloudinary.com/dan9camhs/video/upload/v1785155682/APEX_CABINS_e0k2of.mp4";
 
 const ApexCabins = () => {
   return (
@@ -10,30 +11,22 @@ const ApexCabins = () => {
       id="apex-cabins"
       className="flex flex-col gap-8 px-4 py-10 md:px-10 lg:flex-row lg:items-stretch lg:justify-between lg:gap-12 lg:py-24 lg:pr-15 lg:pl-0 xl:gap-16"
     >
-      <div className="relative w-full shrink-0 lg:w-[min(100%,546px)]">
-        <div className="relative h-[381px] w-full overflow-hidden rounded-lg lg:aspect-[546/519] lg:h-auto lg:rounded-l-none lg:rounded-r-lg">
-          <Image
-            src={ApexCabinsWide}
-            alt="Apex Cabins eco-lodge landscape"
-            fill
-            className="object-cover"
-            sizes="(max-width: 1024px) 100vw, 546px"
-            priority
-          />
-        </div>
-        <div className="absolute top-[10%] right-0 hidden w-[48%] max-w-[291px] overflow-hidden shadow-[0px_4px_4px_rgba(0,0,0,0.25)] xl:block xl:right-[-12%] 2xl:right-[-18%]">
-          <Image
-            src={ApexCabinsPortrait}
-            alt="Apex Cabin exterior"
-            width={291}
-            height={400}
-            className="h-auto w-full object-cover"
-            sizes="291px"
-          />
+      <div className="relative w-full min-w-0 lg:flex-[1.25] xl:flex-[1.4]">
+        <div className="relative aspect-video w-full overflow-hidden rounded-lg lg:rounded-l-none lg:rounded-r-lg">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            aria-label="Apex Cabins eco-lodge landscape"
+            className="absolute inset-0 h-full w-full object-cover"
+          >
+            <source src={APEX_CABINS_VIDEO_SRC} type="video/mp4" />
+          </video>
         </div>
       </div>
 
-      <div className="flex w-full min-w-0 flex-col justify-between gap-8 lg:max-w-[602px] lg:flex-1 lg:shrink">
+      <div className="flex w-full min-w-0 flex-col justify-between gap-8 lg:max-w-[520px] lg:shrink-0 xl:max-w-[560px]">
         <div className="flex flex-col items-center gap-4 text-center lg:items-start lg:text-left">
           <div className="relative flex w-full flex-col items-center lg:items-start">
             <img
