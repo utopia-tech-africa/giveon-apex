@@ -60,15 +60,28 @@ export function HeroSection() {
             </p>
           </div>
 
-          <Link
-            href="#contact"
-            className={cn(
-              buttonVariants(),
-              "w-full shrink-0 text-sm md:w-fit md:text-lg lg:self-end",
-            )}
-          >
-            Send Enquiry
-          </Link>
+          <div className="flex w-full shrink-0 flex-col gap-3 sm:flex-row md:w-fit lg:self-end">
+            <Link
+              href="#contact"
+              className={cn(
+                buttonVariants(),
+                "w-full text-sm md:w-fit md:text-lg",
+              )}
+            >
+              Send Enquiry
+            </Link>
+            <Link
+              href="/Giveon_Court_Company_Brochure.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                buttonVariants({ variant: "filled" }),
+                "w-full text-sm md:w-fit md:text-lg",
+              )}
+            >
+              View Brochure
+            </Link>
+          </div>
         </div>
       </div>
     </section>
