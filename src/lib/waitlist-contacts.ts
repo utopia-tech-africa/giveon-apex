@@ -125,10 +125,16 @@ export async function saveWaitlistContact(input: {
   }
 
   if (segmentId) {
-    await resend.contacts.segments.add({
+    const added = await resend.contacts.segments.add({
       email: input.email,
       segmentId,
     });
+
+    if (added.error) {
+      throw new Error(
+        added.error.message || "Failed to add contact to waitlist segment.",
+      );
+    }
   }
 
   return updated.data;

@@ -4,6 +4,8 @@ import { AdminSignOutButton } from "@/components/admin/admin-sign-out-button";
 import ComponentLayout from "@/components/component-layout";
 import { listWaitlistContacts } from "@/lib/waitlist-contacts";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Waitlist Admin",
   robots: {
